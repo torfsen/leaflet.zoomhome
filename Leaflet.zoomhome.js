@@ -6,7 +6,7 @@
  */
 (function () {
 
-    L.Control.ZoomHome = L.Control.extend({
+    L.Control.ZoomHome = L.Control.Zoom.extend({
         options: {
             position: 'topleft',
             zoomInText: '+',
@@ -32,11 +32,11 @@
             }
 
             this._zoomInButton = this._createButton(options.zoomInText, options.zoomInTitle,
-                controlName + '-in', container, this._zoomIn);
+                controlName + '-in', container, this._zoomIn.bind(this));
             this._zoomHomeButton = this._createButton(options.zoomHomeText,
-                options.zoomHomeTitle, controlName + '-home', container, this._zoomHome);
+                options.zoomHomeTitle, controlName + '-home', container, this._zoomHome.bind(this));
             this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,
-                controlName + '-out', container, this._zoomOut);
+                controlName + '-out', container, this._zoomOut.bind(this));
 
             this._updateDisabled();
             map.on('zoomend zoomlevelschange', this._updateDisabled, this);
@@ -44,49 +44,8 @@
             return container;
         },
 
-        onRemove: function (map) {
-            map.off('zoomend zoomlevelschange', this._updateDisabled, this);
-        },
-
-        _zoomIn: function (e) {
-            this._map.zoomIn(e.shiftKey ? 3 : 1);
-        },
-
-        _zoomOut: function (e) {
-            this._map.zoomOut(e.shiftKey ? 3 : 1);
-        },
-
         _zoomHome: function (e) {
             this._map.setView(this.options.homeCoordinates, this.options.homeZoom);
-        },
-
-        _createButton: function (html, title, className, container, fn) {
-            var link = L.DomUtil.create('a', className, container);
-            link.innerHTML = html;
-            link.href = '#';
-            link.title = title;
-
-            L.DomEvent.on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
-                .on(link, 'click', L.DomEvent.stop)
-                .on(link, 'click', fn, this)
-                .on(link, 'click', this._refocusOnMap, this);
-
-            return link;
-        },
-
-        _updateDisabled: function () {
-            var map = this._map,
-                className = 'leaflet-disabled';
-
-            L.DomUtil.removeClass(this._zoomInButton, className);
-            L.DomUtil.removeClass(this._zoomOutButton, className);
-
-            if (map._zoom === map.getMinZoom()) {
-                L.DomUtil.addClass(this._zoomOutButton, className);
-            }
-            if (map._zoom === map.getMaxZoom()) {
-                L.DomUtil.addClass(this._zoomInButton, className);
-            }
         }
     });
 
