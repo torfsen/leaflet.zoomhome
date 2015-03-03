@@ -13,7 +13,7 @@
             zoomInTitle: 'Zoom in',
             zoomOutText: '-',
             zoomOutTitle: 'Zoom out',
-            zoomHomeText: '<i class="fa fa-home" style="line-height:1.65;"></i>',
+            zoomHomeIcon: 'home',
             zoomHomeTitle: 'Home',
             homeCoordinates: null,
             homeZoom: null
@@ -33,8 +33,9 @@
 
             this._zoomInButton = this._createButton(options.zoomInText, options.zoomInTitle,
                 controlName + '-in', container, this._zoomIn.bind(this));
-            this._zoomHomeButton = this._createButton(options.zoomHomeText,
-                options.zoomHomeTitle, controlName + '-home', container, this._zoomHome.bind(this));
+            var zoomHomeText = '<i class="fa fa-' + options.zoomHomeIcon + '" style="line-height:1.65;"></i>';
+            this._zoomHomeButton = this._createButton(zoomHomeText, options.zoomHomeTitle,
+                controlName + '-home', container, this._zoomHome.bind(this));
             this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,
                 controlName + '-out', container, this._zoomOut.bind(this));
 
