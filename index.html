@@ -57,15 +57,15 @@
                               'CartoDB</a>';
 
             $(document).ready(function() {
-                var tiles = new L.TileLayer(TILES_URL, {attribution: ATTRIBUTION});
-                var map = new L.Map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
+                var tiles = L.tileLayer(TILES_URL, {attribution: ATTRIBUTION});
+                var map = L.map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
                 var legend = L.control({position: 'bottomright'});
                 legend.onAdd = function (m) {
                     return L.DomUtil.get('legend');
                 };
                 legend.addTo(map);
 
-                var zoomHome = new L.Control.ZoomHome();
+                var zoomHome = L.Control.zoomHome();
                 zoomHome.addTo(map);
             });
         </script>
