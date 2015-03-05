@@ -1,7 +1,7 @@
 # Leaflet.zoomhome
 
 A [Leaflet](http://leafletjs.com/)-plugin that provides a zoom control with a
-"Home" button to reset the view.
+"Home" button to reset the view. [Demo](https://torfuspolymorphus.github.io/leaflet.zoomhome)
 
 Based on [code by toms](https://gis.stackexchange.com/a/127383/48264) and
 licensed under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
@@ -23,6 +23,10 @@ including the plugin):
 <link rel="stylesheet" href="leaflet.zoomhome.css"/>
 <script src="leaflet.zoomhome.min.js"></script>
 ```
+
+Alternatively, you can install the plugin via [Bower](http://bower.io):
+
+    bower install leaflet.zoomhome --save
 
 When you create your map, pass `{zoomControl: false}` to disable the standard
 zoom control:
