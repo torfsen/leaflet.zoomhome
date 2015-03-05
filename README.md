@@ -15,13 +15,13 @@ This plugin requires [Font-Awesome](https://fortawesome.github.io/Font-Awesome/)
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 ```
 
-Copy `Leaflet.zoomhome.js` and `Leaflet.zoomhome.css` to your project folder
-and include them in your HTML (you need to include Leaflet before including
-the plugin):
+Copy `Leaflet.zoomhome.min.js` and `Leaflet.zoomhome.css` from the `dist` folder to
+your project folder and include them in your HTML (you need to include Leaflet before
+including the plugin):
 
 ```xml
-<link rel="stylesheet" href="Leaflet.zoomhome.css"/>
-<script src="Leaflet.zoomhome.js"></script>
+<link rel="stylesheet" href="leaflet.zoomhome.css"/>
+<script src="leaflet.zoomhome.min.js"></script>
 ```
 
 When you create your map, pass `{zoomControl: false}` to disable the standard
