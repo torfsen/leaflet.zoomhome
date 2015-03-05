@@ -1,10 +1,13 @@
 /*
  * Leaflet zoom control with a home button for resetting the view.
  *
- * Based on code by toms (licensed under CC-BY-SA 3.0), see
- * https://gis.stackexchange.com/a/127383/48264.
+ * Distributed under the CC-BY-SA-3.0 license. See the file "LICENSE"
+ * for details.
+ *
+ * Based on code by toms (https://gis.stackexchange.com/a/127383/48264).
  */
 (function () {
+    "use strict";
 
     L.Control.ZoomHome = L.Control.Zoom.extend({
         options: {
@@ -46,6 +49,7 @@
         },
 
         _zoomHome: function (e) {
+            //jshint unused:false
             this._map.setView(this.options.homeCoordinates, this.options.homeZoom);
         }
     });
@@ -53,5 +57,4 @@
     L.Control.zoomHome = function (options) {
         return new L.Control.ZoomHome(options);
     };
-
 }());
