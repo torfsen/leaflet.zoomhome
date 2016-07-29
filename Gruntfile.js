@@ -22,16 +22,7 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                bitwise: true,
-                curly: true,
-                eqeqeq: true,
-                forin: true,
-                globals: {
-                    L: false
-                },
-                latedef: 'nofunc',
-                undef: true,
-                unused: true
+                jshintrc: true
             },
             all: ['dist/**/*.js', '!dist/**/*.min.js']
         }

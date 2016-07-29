@@ -1,7 +1,31 @@
 {
+  "name": "leaflet.zoomhome",
+  "main": "dist/leaflet.zoomhome.js",
+  "version": "0.2.0",
+  "description": "A Leaflet-plugin that provides a zoom control with a 'Home' button to reset the view.",
+  "author": "Torf",
+  "contributors": [
+    "Torf <mail@torf.cc> (http://www.torf.cc)",
+    "toms (https://gis.stackexchange.com/users/9847/toms)"
+  ],
+  "homepage": "https://github.com/torfsen/leaflet.zoomhome",
+  "keywords": [
+    "leaflet",
+    "zoom",
+    "maps"
+  ],
+  "license": "CC-BY-SA-3.0",
+  "main": "dist/leaflet.zoomhome.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fingerfoodstudios/leaflet.zoomhome"
+  },
+  "dependencies" : {
+    "leaflet": ">=0.7.0 <1.0.0"
+  },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt": "~1.0.1",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-uglify": "~2.0.0"
   }
 }
