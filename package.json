@@ -1,4 +1,21 @@
 {
+  "name": "leaflet.zoomhome",
+  "main": "dist/leaflet.zoomhome.js",
+  "version": "0.0.1",
+  "description": "A Leaflet-plugin that provides a zoom control with a 'Home' button to reset the view.",
+  "keywords": [
+    "leaflet",
+    "zoom",
+    "maps"
+  ],
+  "license": "CC-BY-SA-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fingerfoodstudios/leaflet.zoomhome"
+  },
+  "dependencies" : {
+    "leaflet": ">=0.7.0 <1.0.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.4.1",
