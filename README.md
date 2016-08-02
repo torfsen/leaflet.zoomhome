@@ -65,3 +65,11 @@ added to the map).
 `homeZoom`: The zoom level to which the map zooms when the home button is pressed
 (default: the zoom level that was active when the control was added to the map).
 
+
+## History
+
+- *0.2.0:* Fix mouse-over issues with zoom-in and zoom-out buttons (contributed by
+  [Patrick McKinney](https://github.com/pmacMaps))
+
+- *0.1.0:* First release
+
