@@ -6,10 +6,27 @@
  *
  * Based on code by toms (https://gis.stackexchange.com/a/127383/48264).
  */
-(function () {
-    "use strict";
 
-    L.Control.ZoomHome = L.Control.Zoom.extend({
+ /*jslint node: true */
+"use strict";
+
+(function (factory, window) {
+
+    // define an AMD module that relies on 'leaflet'
+    if (typeof define === 'function' && define.amd) {
+        define(['leaflet'], factory);
+
+        // define a Common JS module that relies on 'leaflet'
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('leaflet'));
+    }
+
+    // attach your plugin to the global 'L' variable
+    if (typeof window !== 'undefined' && window.L) {
+        window.L.Control.ZoomHome = factory(L);
+    }
+}(function (L) {
+    var ZoomHome = L.Control.Zoom.extend({
         options: {
             position: 'topleft',
             zoomInText: '+',
@@ -54,7 +71,5 @@
         }
     });
 
-    L.Control.zoomHome = function (options) {
-        return new L.Control.ZoomHome(options);
-    };
-}());
+    return ZoomHome;
+}, window));

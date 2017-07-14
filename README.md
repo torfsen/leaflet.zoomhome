@@ -28,6 +28,10 @@ Alternatively, you can install the plugin via [Bower](http://bower.io):
 
     bower install leaflet.zoomhome --save
 
+or NPM for webpack
+
+    npm install leaflet.zoomhome --save-dev
+
 When you create your map, pass `{zoomControl: false}` to disable the standard
 zoom control:
 
@@ -38,7 +42,7 @@ var map = L.map('map', {zoomControl: false});
 Then create the zoomhome-control and add it to the map:
 
 ```js
-var zoomHome = L.Control.zoomHome();
+var zoomHome = new ZoomHome();
 zoomHome.addTo(map);
 ```
 
@@ -48,7 +52,7 @@ zoomHome.addTo(map);
 You can pass additional options when you create the control:
 
 ```js
-var zoomHome = L.Control.zoomHome({position: 'topright'});
+var zoomHome = new ZoomHome({position: 'topright'});
 ```
 
 In addition to the [options supported by the standard zoom control](http://leafletjs.com/reference.html#control-zoom),
@@ -67,6 +71,9 @@ added to the map).
 
 
 ## History
+
+- *0.3.0:* Add modularization (contributed by
+  [Justin Hamade](https://github.com/fingerfoodstudios/leaflet.zoomhome))
 
 - *0.2.0:* Fix mouse-over issues with zoom-in and zoom-out buttons (contributed by
   [Patrick McKinney](https://github.com/pmacMaps))

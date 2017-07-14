@@ -1,0 +1,14 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "latedef": "nofunc",
+  "undef": true,
+  "unused": true,
+  "browserify": true,
+  "globals": {
+    "L": false,
+    "define": false
+  }
+}
