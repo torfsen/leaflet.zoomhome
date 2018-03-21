@@ -49,12 +49,12 @@
         },
 
         resetHome: function () {
-            setHomeCoordinates();
-            setHomeZoom();
+            this.setHomeCoordinates();
+            this.setHomeZoom();
         },
 
         setHomeCoordinates: function (coordinates) {
-            if (coordinates === null) {
+            if (coordinates === undefined) {
                 this.options.homeCoordinates = this._map.getCenter();
             }
             else
@@ -64,7 +64,7 @@
         },
 
         setHomeZoom: function (zoom) {
-            if (zoom === null) {
+            if (zoom === undefined) {
                 this.options.homeZoom = this._map.getZoom();
             }
             else
