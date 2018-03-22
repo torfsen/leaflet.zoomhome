@@ -53,6 +53,11 @@
             this.setHomeZoom();
         },
 
+        setHomeBounds: function (bounds) {
+            this.options.homeZoom = map.getBoundsZoom(bounds);
+            this.options.homeCoordinates = bounds.getCenter();
+        },
+
         setHomeCoordinates: function (coordinates) {
             if (coordinates === undefined) {
                 this.options.homeCoordinates = this._map.getCenter();
