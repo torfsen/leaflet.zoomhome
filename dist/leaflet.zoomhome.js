@@ -54,7 +54,7 @@
         },
 
         setHomeBounds: function (bounds) {
-            this.options.homeZoom = map.getBoundsZoom(bounds);
+            this.options.homeZoom = this._map.getBoundsZoom(bounds);
             this.options.homeCoordinates = bounds.getCenter();
         },
 
