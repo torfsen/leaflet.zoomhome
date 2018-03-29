@@ -70,6 +70,14 @@
             this.options.homeZoom = zoom;
         },
 
+        getHomeZoom: function () {
+            return this.options.homeZoom;
+        },
+
+        getHomeCoordinates: function () {
+            return this.options.homeCoordinates;
+        },
+
         _zoomHome: function (e) {
             //jshint unused:false
             this._map.setView(this.options.homeCoordinates, this.options.homeZoom);

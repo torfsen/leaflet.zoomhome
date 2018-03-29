@@ -34,11 +34,19 @@ module.exports = function(grunt) {
                 unused: true
             },
             all: ['dist/**/*.js', '!dist/**/*.min.js']
-        }
+        },
+        shell: {
+            test: {
+                command: 'node_modules/.bin/mocha tests/bootstrap.js tests',
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('test', ['shell:test']);
+    grunt.registerTask('default', ['jshint', 'test', 'uglify']);
 };
+

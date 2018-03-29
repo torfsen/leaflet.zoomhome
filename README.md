@@ -71,11 +71,25 @@ added to the map).
 You can change the home view after the control has been created using the
 following functions.
 
-`zoomHome.setHomeCoordinates(coordinates)`: If `coordinates` are given then they define the new home coordinates. If no coordinates are given then the current map center becomes the new home location. The home zoom level is not changed.
+`zoomHome.setHomeCoordinates(coordinates)`: If `coordinates` are given then
+they define the new home coordinates. If no coordinates are given then the
+current map center becomes the new home location. The home zoom level is not
+changed.
 
-`zoomHome.setHomeZoom(zoom)`: If `zoom` is given then it defines the new home zoom. If no zoom is given then the current map zoom becomes the new home zoom. The home coordinates are not changed.
+`zoomHome.setHomeZoom(zoom)`: If `zoom` is given then it defines the new home
+zoom. If no zoom is given then the current map zoom becomes the new home zoom.
+The home coordinates are not changed.
 
-`zoomHome.setHomeBounds(bounds)`: If `bounds` are given then they define the new home view (both zoom and center). If they are not given, the current map bounds become the new home.
+`zoomHome.setHomeBounds(bounds)`: If `bounds` are given then they define the
+new home view (both zoom and center). If they are not given, the current map
+bounds become the new home.
+
+
+## Inspecting the Home View
+
+You can get the home coordinates and zoom using the
+`zoomHome.getHomeCoordinates()` and `zoomHome.getHomeZoom()` functions,
+respectively.
 
 
 ## History
@@ -84,4 +98,9 @@ following functions.
   [Patrick McKinney](https://github.com/pmacMaps))
 
 - *0.1.0:* First release
+
+
+## Development
+
+Run the tests via `grunt test`.
 
