@@ -48,7 +48,7 @@
             return container;
         },
 
-        resetHome: function () {
+        setHome: function () {
             this.setHomeCoordinates();
             this.setHomeZoom();
         },
