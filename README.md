@@ -66,6 +66,18 @@ added to the map).
 (default: the zoom level that was active when the control was added to the map).
 
 
+## Changing the Home View
+
+You can change the home view after the control has been created using the
+following functions.
+
+`zoomHome.setHomeCoordinates(coordinates)`: If `coordinates` are given then they define the new home coordinates. If no coordinates are given then the current map center becomes the new home location. The home zoom level is not changed.
+
+`zoomHome.setHomeZoom(zoom)`: If `zoom` is given then it defines the new home zoom. If no zoom is given then the current map zoom becomes the new home zoom. The home coordinates are not changed.
+
+`zoomHome.setHomeBounds(bounds)`: If `bounds` are given then they define the new home view (both zoom and center). If they are not given, the current map bounds become the new home.
+
+
 ## History
 
 - *0.2.0:* Fix mouse-over issues with zoom-in and zoom-out buttons (contributed by
