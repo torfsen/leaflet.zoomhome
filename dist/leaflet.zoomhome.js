@@ -48,6 +48,36 @@
             return container;
         },
 
+        resetHome: function () {
+            this.setHomeCoordinates();
+            this.setHomeZoom();
+        },
+
+        setHomeBounds: function (bounds) {
+            this.options.homeZoom = this._map.getBoundsZoom(bounds);
+            this.options.homeCoordinates = bounds.getCenter();
+        },
+
+        setHomeCoordinates: function (coordinates) {
+            if (coordinates === undefined) {
+                this.options.homeCoordinates = this._map.getCenter();
+            }
+            else
+            {
+                this.options.homeCoordinates = coordinates;
+            }
+        },
+
+        setHomeZoom: function (zoom) {
+            if (zoom === undefined) {
+                this.options.homeZoom = this._map.getZoom();
+            }
+            else
+            {
+                this.options.homeZoom = zoom;
+            }
+        },
+
         _zoomHome: function (e) {
             //jshint unused:false
             this._map.setView(this.options.homeCoordinates, this.options.homeZoom);
