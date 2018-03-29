@@ -15,14 +15,15 @@
             }
 
             #legend {
-                margin: 3em;
+                position: absolute;
+                right: 20px;
+                bottom: 40px;
+                font-family: sans-serif;
+                font-size: 13px;
                 border: 1px solid #555;
                 background-color: #fafafa;
                 padding: 1em;
                 border-radius: 6px;
-                -o-border-radius: 6px;
-                -moz-border-radius: 6px;
-                -webkit-border-radius: 6px;
                 color: #555;
                 width: 22em;
             }
@@ -60,12 +61,6 @@
             $(document).ready(function() {
                 var tiles = L.tileLayer(TILES_URL, {attribution: ATTRIBUTION});
                 var map = L.map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
-                var legend = L.control({position: 'bottomright'});
-                legend.onAdd = function (m) {
-                    return L.DomUtil.get('legend');
-                };
-                legend.addTo(map);
-
                 var zoomHome = L.Control.zoomHome();
                 zoomHome.addTo(map);
             });
