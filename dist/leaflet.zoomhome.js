@@ -51,6 +51,10 @@
         setHomeBounds: function (bounds) {
             if (bounds === undefined) {
                 bounds = this._map.getBounds();
+            } else {
+                if (typeof bounds.getCenter !== 'function') {
+                    bounds = L.latLngBounds(bounds);
+                }
             }
             this.options.homeZoom = this._map.getBoundsZoom(bounds);
             this.options.homeCoordinates = bounds.getCenter();

@@ -5,6 +5,12 @@
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
         <script src="../dist/leaflet.zoomhome.js"></script>
+        <style>
+            #map {
+                width: 100px;
+                height: 100px;
+            }
+        </style>
     </head>
     <body>
         <div id="map"></div>
@@ -13,8 +19,8 @@
 
             $(document).ready(function() {
                 map = L.map('map', {
-                    center: [51.505, -0.09],
-                    zoom: 11,
+                    center: [40, 20],
+                    zoom: 10,
                     zoomControl: false,
                 });
             });

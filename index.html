@@ -58,9 +58,11 @@
                               'CC-BY-SA</a>. Tiles &copy; <a href="https://carto.com/attributions">' +
                               'Carto</a>';
 
+            var map;
+
             $(document).ready(function() {
                 var tiles = L.tileLayer(TILES_URL, {attribution: ATTRIBUTION});
-                var map = L.map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
+                map = L.map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
                 var zoomHome = L.Control.zoomHome();
                 zoomHome.addTo(map);
             });

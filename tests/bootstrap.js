@@ -1,12 +1,16 @@
 const puppeteer = require('puppeteer');
 
+const SHOW_BROWSER = false;
+
 before (async function () {
-    global.browser = await puppeteer.launch();
+    global.browser = await puppeteer.launch({devtools: SHOW_BROWSER});
     global.assert = require('chai').assert;
 });
 
 after (function () {
-    browser.close();
+    if (!SHOW_BROWSER) {
+        browser.close();
+    }
 });
 
 beforeEach(async function () {
@@ -15,6 +19,8 @@ beforeEach(async function () {
 });
 
 afterEach(async function () {
-    await page.close();
+    if (!SHOW_BROWSER) {
+        await page.close();
+    }
 });
 
