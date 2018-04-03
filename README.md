@@ -1,7 +1,11 @@
 # Leaflet.zoomhome
 
+[![Travis CI badge](https://api.travis-ci.org/torfsen/leaflet.zoomhome.svg?branch=master)](https://travis-ci.org/torfsen/leaflet.zoomhome)
+
 A [Leaflet](http://leafletjs.com/)-plugin that provides a zoom control with a
-"Home" button to reset the view. [Demo](https://torfsen.github.io/leaflet.zoomhome/)
+"Home" button to reset the view.
+
+[Demo](https://torfsen.github.io/leaflet.zoomhome/)
 
 Based on [code by toms](https://gis.stackexchange.com/a/127383/48264) and
 licensed under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
@@ -102,5 +106,7 @@ respectively.
 
 ## Development
 
-Run the tests via `grunt test`.
+Install all requirements using `npm install`.
+
+`grunt` will run the linter, execute all tests and update the minified JS file. Alternatively, you can run `grunt jshint`, `grunt test`, and `grunt uglify` separately.
 
