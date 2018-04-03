@@ -7,9 +7,6 @@ A [Leaflet](http://leafletjs.com/)-plugin that provides a zoom control with a
 
 [Demo](https://torfsen.github.io/leaflet.zoomhome/)
 
-Based on [code by toms](https://gis.stackexchange.com/a/127383/48264) and
-licensed under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
-
 
 ## Usage
 
@@ -96,12 +93,15 @@ You can get the home coordinates and zoom using the
 respectively.
 
 
-## History
+## Change Log
 
-- *0.2.0:* Fix mouse-over issues with zoom-in and zoom-out buttons (contributed by
-  [Patrick McKinney](https://github.com/pmacMaps))
+See the file [CHANGELOG.md](CHANGELOG.md).
 
-- *0.1.0:* First release
+
+## License
+
+Based on [code by toms](https://gis.stackexchange.com/a/127383/48264) and
+licensed under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
 
 
 ## Development
