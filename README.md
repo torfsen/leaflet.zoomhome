@@ -10,6 +10,8 @@ A [Leaflet](http://leafletjs.com/)-plugin that provides a zoom control with a
 
 ## Usage
 
+Supported Leaflet versions are 0.7.x and later.
+
 This plugin requires [Font-Awesome](https://fortawesome.github.io/Font-Awesome/):
 
 ```xml
@@ -108,5 +110,9 @@ licensed under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
 
 Install all requirements using `npm install`.
 
-`grunt` will run the linter, execute all tests and update the minified JS file. Alternatively, you can run `grunt jshint`, `grunt test`, and `grunt uglify` separately.
+The tests can be run via `grunt test` (test against the currently installed Leaflet version) or via `grunt test-all` (test against all supported Leaflet versions).
+
+Linting can be done via `grunt jshint`, and `grunt uglify` updates the minified JS file.
+
+`grunt` on its own is equivalent to running the `jshint`, `test-all` and `uglify` tasks.
 

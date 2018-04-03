@@ -37,7 +37,10 @@ module.exports = function(grunt) {
         },
         shell: {
             test: {
-                command: 'node_modules/.bin/mocha tests/bootstrap.js tests',
+                command: 'node_modules/.bin/mocha tests/bootstrap.js tests --timeout 10000',
+            },
+            tav: {
+                command: 'node_modules/.bin/tav',
             },
         },
     });
@@ -46,7 +49,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-shell');
 
+    grunt.registerTask('test-all', ['shell:tav']);
     grunt.registerTask('test', ['shell:test']);
-    grunt.registerTask('default', ['jshint', 'test', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'test-all', 'uglify']);
 };
 
