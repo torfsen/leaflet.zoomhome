@@ -13,6 +13,11 @@ to [Semantic Versioning].
   `getHomeCoordinates`, and `getHomeZoom`
   (contributed by [@m1dst] in [#12])
 
+### Fixed
+
+- Fixed broken fix of mouse-over issue on zoom buttons
+  (contributed by [@pmacMaps] in [#2])
+
 
 ## [0.2.0] (2016-08-02)
 
@@ -37,5 +42,6 @@ First public release.
 [@m1dst]: https://github.com/m1dst
 
 [#1]: https://github.com/torfsen/leaflet.zoomhome/pull/1
+[#2]: https://github.com/torfsen/leaflet.zoomhome/pull/2
 [#12]: https://github.com/torfsen/leaflet.zoomhome/pull/12
 
