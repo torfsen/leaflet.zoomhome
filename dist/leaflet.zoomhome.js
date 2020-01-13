@@ -56,7 +56,9 @@
                     bounds = L.latLngBounds(bounds);
                 }
             }
-            this.options.homeZoom = this._map.getBoundsZoom(bounds);
+            if(bounds) {
+                this.options.homeBounds = bounds;
+            }
             this.options.homeCoordinates = bounds.getCenter();
         },
 
@@ -84,6 +86,9 @@
 
         _zoomHome: function (e) {
             //jshint unused:false
+            if (this.options.homeBounds) {
+                this.options.homeZoom = this._map.getBoundsZoom(this.options.homeBounds);
+            }
             this._map.setView(this.options.homeCoordinates, this.options.homeZoom);
         }
     });
