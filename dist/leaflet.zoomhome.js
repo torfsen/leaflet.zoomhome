@@ -18,6 +18,7 @@
             zoomOutTitle: 'Zoom out',
             zoomHomeIcon: 'home',
             zoomHomeTitle: 'Home',
+            imageSource: null,
             homeCoordinates: null,
             homeZoom: null
         },
@@ -36,7 +37,7 @@
 
             this._zoomInButton = this._createButton(options.zoomInText, options.zoomInTitle,
                 controlName + '-in', container, this._zoomIn.bind(this));
-            var zoomHomeText = '<i class="fa fa-' + options.zoomHomeIcon + '" style="line-height:1.65;"></i>';
+            var zoomHomeText = '<img class="zoomhome-img" alt="icon of a house" src=' + options.imageSource + '/>';
             this._zoomHomeButton = this._createButton(zoomHomeText, options.zoomHomeTitle,
                 controlName + '-home', container, this._zoomHome.bind(this));
             this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,

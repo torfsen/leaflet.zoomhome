@@ -7,3 +7,11 @@ a.leaflet-control-zoomhome-out {
   font-size: 1.5em;
   line-height: 26px;
 }
+
+.zoomhome-img {
+  margin: auto;
+  vertical-align: middle;
+  display: inline-block;
+  height: 0.95em;
+  width: 0.95em;
+}

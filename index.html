@@ -2,9 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>leaflet.zoomhome demo</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+        <title>leaflet.zoomhome demo - no font awesome</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <link rel="stylesheet" href="dist/leaflet.zoomhome.css"/>
         <style>
             html, body, #map {
@@ -26,6 +25,7 @@
                 border-radius: 6px;
                 color: #555;
                 width: 22em;
+                z-index: 1500;
             }
 
             #legend p {
@@ -37,8 +37,11 @@
                 font-size: 120%;
             }
         </style>
-        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script src="dist/leaflet.zoomhome.min.js"></script>
     </head>
     <body>
@@ -50,7 +53,7 @@
             home button to reset the view.</p>
         </div>
         <script>
-            var TILES_URL = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+            const TILES_URL = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
                 INITIAL_LOCATION = [49.0140679, 8.4044366],
                 INITIAL_ZOOM = 13,
                 ATTRIBUTION = 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> ' +
@@ -58,12 +61,12 @@
                               'CC-BY-SA</a>. Tiles &copy; <a href="https://carto.com/attributions">' +
                               'Carto</a>';
 
-            var map;
+            let map;
 
             $(document).ready(function() {
-                var tiles = L.tileLayer(TILES_URL, {attribution: ATTRIBUTION});
+                const tiles = L.tileLayer(TILES_URL, {attribution: ATTRIBUTION});
                 map = L.map('map', {zoomControl: false}).addLayer(tiles).setView(INITIAL_LOCATION, INITIAL_ZOOM);
-                var zoomHome = L.Control.zoomHome();
+                const zoomHome = L.Control.zoomHome({imageSource: 'dist/home-solid.png'});
                 zoomHome.addTo(map);
             });
         </script>
